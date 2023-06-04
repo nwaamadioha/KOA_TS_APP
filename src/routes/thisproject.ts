@@ -8,7 +8,7 @@ interface BodyValues {
 }
 router.post(`/thisproject`, async (ctx: Context) => {
 
-    const body: any = ctx.request.body;
+    const body = <BodyValues>ctx.request.body;
     try {
         ctx.status = 201;
         ctx.body = {

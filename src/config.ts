@@ -1,7 +1,9 @@
-interface IConfig {
-    port: string;
-}
+import * as Interfaces from "./types/interfaces";
 
-export const config: IConfig = {
+export const config: Interfaces.IConfig = {
     port: process.env.PORT || "7654",
+    redis: {
+        host: process.env.REDIS_HOST || "0.0.0.0",
+        port: process.env.REDIS_PORT && parseInt(process.env.REDIS_PORT ) || 6401,
+    }
 };
